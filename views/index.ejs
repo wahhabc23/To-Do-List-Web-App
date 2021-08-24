@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>To-DO-List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@400&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+
+  <!-- EJS AREA OPEN --------------------------- -->
+  <div class="box" id="heading">
+    <h1><%=dayType%></h1>    <!--Renders Value to Day-->
+  </div>
+
+  <div class="box">
+    <!-- <%  %> is used in each ends to do JS codes in html using EJS-->
+    <% for(var i=0;i<items.length;i++ ) { %>
+    <!-- Create for loop using JS -->
+    <div class="item">
+      <input type="checkbox">
+      <p><%=items[i]%></p>
+    </div>
+    <% } %>
+    <!-- <%  %> is required for all direct JS Scripts in HTML -->
+    <form class="item" action="/" method="post">
+      <input type="text" name="text1" placeholder="Add new to list" autocomplete="off">
+      <button type="submit" name="button">+</button>
+    </form>
+  </div>
+
+  <!-- EJS AREA CLOSES  -------------------------- -->
+
+
+</body>
+
+</html>
